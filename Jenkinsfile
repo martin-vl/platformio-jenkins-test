@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        pio run
+        sh 'echo "Hello World!!"'
       }
     }
   }
