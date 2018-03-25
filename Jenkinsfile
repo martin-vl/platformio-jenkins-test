@@ -4,7 +4,11 @@ pipeline {
     stage('build') {
       steps {
         sh '/usr/local/bin/pio run'
-        //sh 'python --version'
+      }
+    }
+    stage('upload') {
+      steps {
+        sh 'pio run --target upload'
       }
     }
   }
