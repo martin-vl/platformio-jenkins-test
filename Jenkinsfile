@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        pio run
+        //pio run
+        sh 'python --version'
       }
     }
   }
