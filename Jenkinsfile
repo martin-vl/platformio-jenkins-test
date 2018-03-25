@@ -6,5 +6,10 @@ pipeline {
         pio run
       }
     }
+    stage('upload') {
+      steps {
+        pio run --target upload
+      }
+    }
   }
 }
