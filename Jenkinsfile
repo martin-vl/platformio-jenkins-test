@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pio run'
+        sh 'pio run -e nodemcuv2'
       }
     }
     stage('upload') {
       steps {
-        sh 'pio run --target upload'
+        sh 'pio run  -e nodemcuv2 --target upload'
       }
     }
   }
