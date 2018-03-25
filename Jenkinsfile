@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '/usr/local/bin/pio run'
+        sh 'pio run'
       }
     }
     stage('upload') {
