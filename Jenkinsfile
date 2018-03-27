@@ -6,9 +6,14 @@ pipeline {
         sh 'pio run -e nodemcuv2'
       }
     }
-    stage('upload') {
+    stage('flash') {
       steps {
         sh 'pio run  -e nodemcuv2 --target upload'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'python test/acceptance_test.py -v'
       }
     }
   }

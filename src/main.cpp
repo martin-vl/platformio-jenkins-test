@@ -1,4 +1,3 @@
-#ifndef UNIT_TEST
 
 #include <Arduino.h>
 
@@ -10,5 +9,3 @@ void loop() {
   Serial.println("Hallo!!");
   delay(1000);
 }
-
-#endif
