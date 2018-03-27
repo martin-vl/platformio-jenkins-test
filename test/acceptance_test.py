@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 
 import unittest
+import serial
 
 class AcceptanceTests(unittest.TestCase):
     def setUp(self):
-        pass
+        self.dutSerial=serial.Serial('/dev/ttyUSB0',115200,timeout=1)
 
     def tearDown(self):
-        pass
+        self.dutSerial.close()
 
-    def test1(self):
-        self.assertEqual(1,1)
+    def testHelloOnSerial(self):
+        line = self.dutSerial.readline()
+        self.assertEqual(line,'Hallo!!\r\n')
 
 if __name__ == '__main__':
     unittest.main()
